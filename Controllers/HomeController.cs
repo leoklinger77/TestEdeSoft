@@ -6,32 +6,64 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Test.Models;
+using Test.Models.Interfaces;
 
 namespace Test.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IDonosRepository _donosRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IDonosRepository donosRepository)
         {
-            _logger = logger;
+            _donosRepository = donosRepository;
         }
+        public async Task<ActionResult> Home()
+        {
+            return View();
+        }       
 
-        public IActionResult Index()
+        public async Task<ActionResult> ToList()
+        {              
+            return View(await _donosRepository.FindAlls());
+        }
+        public async Task<ActionResult> Insert()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public async Task<ActionResult> InsertDb(Donos donos)
         {
-            return View();
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _donosRepository.Insert(donos);
+
+            return RedirectToAction(nameof(ToList));
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public async Task<ActionResult> Update(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(await _donosRepository.FindById(id));
         }
+
+        public async Task<ActionResult> UpdateDb(Donos donos)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _donosRepository.Insert(donos);
+
+            return RedirectToAction(nameof(ToList));
+        }
+
+        public async Task<ActionResult> Delete(int id)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+
+            await _donosRepository.Remove(id);
+
+            return RedirectToAction(nameof(ToList));
+        }
+
+
     }
 }

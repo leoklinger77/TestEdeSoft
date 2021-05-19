@@ -1,8 +1,13 @@
-﻿namespace DogAndPeoples.Models
+﻿using System.Collections.Generic;
+using Test.Models.ManyToMany;
+
+namespace Test.Models
 {
     public class Donos : Entity
     {        
         public string Nome { get; set; }
+
+        public IEnumerable<CaesDono> CaesDono { get; set; } = new List<CaesDono>();
 
         public Donos() : base() { }
 

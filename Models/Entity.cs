@@ -1,4 +1,4 @@
-﻿namespace DogAndPeoples.Models
+﻿namespace Test.Models
 {
     public abstract class Entity
     {

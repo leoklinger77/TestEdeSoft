@@ -1,9 +1,14 @@
-﻿namespace Test.Models
+﻿using System.Collections.Generic;
+using Test.Models.ManyToMany;
+
+namespace Test.Models
 {
     public class Caes : Entity
     {        
         public string Nome { get; set; }
-        public string Raca { get; set; }
+        public string Raca { get; set; }        
+        public IEnumerable<CaesDono> CaesDono { get; set; } = new List<CaesDono>();
+
         public Caes() : base() { }
         
         public Caes(int id, string nome, string raca) : base(id)
