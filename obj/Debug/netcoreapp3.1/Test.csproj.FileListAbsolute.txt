@@ -149,7 +149,6 @@ C:\Users\Kling\Desktop\Project_EdeSoft\Test\bin\Debug\netcoreapp3.1\zh-Hant\Micr
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Home\ToList.cshtml.g.cs
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Home\Insert.cshtml.g.cs
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Home\Update.cshtml.g.cs
-C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Home\Home.cshtml.g.cs
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Caes\Insert.cshtml.g.cs
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Caes\ToList.cshtml.g.cs
 C:\Users\Kling\Desktop\Project_EdeSoft\Test\obj\Debug\netcoreapp3.1\Razor\Views\Caes\Update.cshtml.g.cs

@@ -61,7 +61,7 @@ namespace Test
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=home}/{id?}");
+                    pattern: "{controller=Home}/{action=ToList}/{id?}");
             });
         }
     }

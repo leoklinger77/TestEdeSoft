@@ -7,8 +7,16 @@
 <h1>Lista de Donos</h1>
 
 <p>
-    <a asp-action="Insert">Create New</a>
+    <a asp-action="Insert">Cadastrar</a>
 </p>
+@if (TempData["Error"] != null)
+{
+    <div class="alert-danger">
+        <button class="close">&times;</button>
+        <i class="icon ion-checkmark-circled"></i>
+        <strong>Ops!</strong> @TempData["Error"]
+    </div>
+}
 <table class="table">
     <thead>
         <tr>
@@ -19,16 +27,17 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |                
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
